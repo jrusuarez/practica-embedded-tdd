@@ -1,0 +1,7 @@
+test/src/
+test/*/lib
+test/*/objs
+test/*/*_tests
+test/*/*_tests.exe
+*.txt
+*.html
