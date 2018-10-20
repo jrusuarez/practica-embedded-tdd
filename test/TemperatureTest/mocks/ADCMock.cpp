@@ -11,6 +11,6 @@ void ADCMockSetADCValue(uint16_t value) {
 }
 
 // override
-uint16_t getADCValue() {
-    return adcValue;
+int getADCValue(void (*callback)(uint16_t)) {
+    return 0;
 }

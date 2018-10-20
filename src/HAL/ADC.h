@@ -13,7 +13,7 @@ extern "C" {
 #define ADC_MAX_VALUE 4096
 
 void ADCInit();
-uint16_t getADCValue();
+int getADCValue(void (*callback)(uint16_t));
 
 
 #ifdef __cplusplus

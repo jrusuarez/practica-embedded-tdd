@@ -1,8 +1,18 @@
 #include "./Temperature.h"
 #include "HAL/ADC.h"
+#include <stdbool.h>
+
+static uint16_t lastTemperature;
+
+static void getADCValueCallback(uint16_t adcValue) {
+    // TODO: implementar callback de valor de ADC
+}
+
+void TemperatureTask() {
+    // TODO: IMplementar task de temperatura
+
+}
 
 uint16_t getTemperatureInCx10() {
-    // TODO: Implementar función de temperatura
-    uint16_t adcValue = getADCValue();
-    return ((uint32_t)adcValue * 1000 ) / ADC_MAX_VALUE;
+    return lastTemperature;
 }

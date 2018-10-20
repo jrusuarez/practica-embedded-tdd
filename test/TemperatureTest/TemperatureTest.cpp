@@ -15,17 +15,15 @@ TEST_GROUP(TemperatureTestGroup)
 
 TEST(TemperatureTestGroup, 0Degrees)
 {
-    CHECK_EQUAL(0, getTemperatureInCx10());
+    FAIL("Test not implemented yet");
 }
 
 TEST(TemperatureTestGroup, 25Degrees)
 {
-    ADCMockSetADCValue(ADC_MAX_VALUE / 4);
-    CHECK_EQUAL(250, getTemperatureInCx10());
+    FAIL("Test not implemented yet");
 }
 
 TEST(TemperatureTestGroup, 100Degrees)
 {
-    ADCMockSetADCValue(ADC_MAX_VALUE);
-    CHECK_EQUAL(1000, getTemperatureInCx10());
+    FAIL("Test not implemented yet");
 }
