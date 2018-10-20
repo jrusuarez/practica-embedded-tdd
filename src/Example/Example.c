@@ -14,6 +14,5 @@ bool notOp(bool a) {
 }
 
 bool xorOp(bool a, bool b) {
-  // TODO: Crear tests a modo TDD para implementar esta función
-  return true;
+  return (a || b) && !(a && b);
 }

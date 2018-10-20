@@ -23,3 +23,19 @@ TEST(ExampleTestGroup, BooleanNotOperator) {
   CHECK_TRUE(a);
   CHECK_FALSE(notOp(a));
 }
+
+TEST(ExampleTestGroup, XorCase1) {
+  CHECK_FALSE(xorOp(false, false));
+}
+
+TEST(ExampleTestGroup, XorCase2) {
+  CHECK_TRUE(xorOp(true, false));
+}
+
+TEST(ExampleTestGroup, XorCase3) {
+  CHECK_TRUE(xorOp(false, true));
+}
+
+TEST(ExampleTestGroup, XorCase4) {
+  CHECK_FALSE(xorOp(true, true));
+}
