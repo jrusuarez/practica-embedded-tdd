@@ -5,6 +5,7 @@
 extern "C" {
 #endif
 
+
 #include <stdint.h>
 
 // 3V equivalen al máximo valor de ADC y a 100ºC
@@ -13,6 +14,7 @@ extern "C" {
 
 void ADCInit();
 uint16_t getADCValue();
+
 
 #ifdef __cplusplus
 }
