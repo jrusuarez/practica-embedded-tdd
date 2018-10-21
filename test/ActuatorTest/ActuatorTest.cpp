@@ -14,10 +14,16 @@ TEST_GROUP(ActuatorTestGroup)
 
 TEST(ActuatorTestGroup, TurnOn)
 {
-    FAIL("Not implemented yet");
+    setActuator(true);
+    CHECK_EQUAL(1, GPIOMockSetOutputGetCalledTimes());
+    CHECK_EQUAL(ACTUATOR_ID, GPIOMockSetOutputGetLastPinId());
+    CHECK_EQUAL(true, GPIOMockSetOutputGetLastValue());
 }
 
 TEST(ActuatorTestGroup, TurnOff)
 {
-    FAIL("Not implemented yet");
+    setActuator(false);
+    CHECK_EQUAL(1, GPIOMockSetOutputGetCalledTimes());
+    CHECK_EQUAL(ACTUATOR_ID, GPIOMockSetOutputGetLastPinId());
+    CHECK_EQUAL(false, GPIOMockSetOutputGetLastValue());
 }
