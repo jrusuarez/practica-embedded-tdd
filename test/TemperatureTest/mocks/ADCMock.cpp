@@ -1,16 +1,18 @@
 #include "./ADCMock.h"
-
-static uint16_t adcValue;
+#include <stdlib.h>
+void (*adcValueCallback)(uint16_t) = NULL;
 
 void ADCMockInit() {
-    adcValue = 0;
+
 }
 
-void ADCMockSetADCValue(uint16_t value) {
-    adcValue = value;
+void ADCMockTriggerADCValue(uint16_t value) {
+    if (adcValueCallback != NULL) {
+      (*adcValueCallback)(value);
+    }
 }
 
 // override
 int getADCValue(void (*callback)(uint16_t)) {
-    return 0;
+    adcValueCallback = callback;
 }

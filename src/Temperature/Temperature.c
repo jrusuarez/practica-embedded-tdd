@@ -3,14 +3,18 @@
 #include <stdbool.h>
 
 static uint16_t lastTemperature;
+bool waitingForMeasurement = false;
 
 static void getADCValueCallback(uint16_t adcValue) {
-    // TODO: implementar callback de valor de ADC
+    waitingForMeasurement = false;
+    lastTemperature = ((uint32_t)adcValue * 1000 ) / ADC_MAX_VALUE;
 }
 
 void TemperatureTask() {
-    // TODO: IMplementar task de temperatura
-
+    if (!waitingForMeasurement) {
+        waitingForMeasurement = true;
+        getADCValue(getADCValueCallback);
+    }
 }
 
 uint16_t getTemperatureInCx10() {

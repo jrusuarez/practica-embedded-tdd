@@ -5,6 +5,6 @@
 
 void ADCMockInit(void);
 
-void ADCMockSetADCValue(uint16_t value);
+void ADCMockTriggerADCValue(uint16_t value);
 
 #endif
