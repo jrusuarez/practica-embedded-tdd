@@ -2,8 +2,8 @@
 
 static uint8_t tempInCx10;
 
-void TemperatureMockSetTemp(uint8_t tempInCx10) {
-    // TODO: Implementar código de mock para fijar temperatura
+void TemperatureMockSetTemp(uint8_t value) {
+    tempInCx10 = value;
 }
 
 // Override
@@ -13,5 +13,5 @@ void TemperatureTask() {
 
 // Override
 uint16_t getTemperatureInCx10() {
-    // TODO: Implementar código que devuelve temperatura
+    return tempInCx10;
 }
