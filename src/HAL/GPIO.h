@@ -8,10 +8,13 @@ extern "C" {
 #include <stdbool.h>
 
 typedef enum {
-  ACTUATOR_ID
+  ACTUATOR_ID,
+  GPIO_BUTTON_1,
+  GPIO_BUTTON_2
 } gpio_id;
 
 void GPIOSetOutput(gpio_id, bool);
+bool GPIOGetInput(gpio_id);
 
 #ifdef __cplusplus
 }
