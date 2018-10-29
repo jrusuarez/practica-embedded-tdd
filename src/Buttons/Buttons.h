@@ -22,6 +22,7 @@ typedef struct {
     button_event_type eventType;
 } button_event;
 
+void ButtonInit();
 int ButtonAddEventListener(void (*callback)(button_event));
 void ButtonTask();
 

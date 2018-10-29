@@ -9,9 +9,15 @@ uint8_t setOutputCalled;
 // está sobredimensionada ya que el uso de memoria no importa demasiado aquí
 bool inputValues[INPUT_LEN];
 
+void ResetInputs() {
+    for (uint32_t i = 0; i < INPUT_LEN; i++) {
+        inputValues[i] = false;
+    }
+}
+
 void GPIOMockInit() {
     setOutputCalled = 0;
-    // TODO: Resetear valores de entrada
+    ResetInputs();
 }
 
 uint8_t GPIOMockSetOutputGetCalledTimes() {
@@ -27,7 +33,7 @@ bool GPIOMockSetOutputGetLastValue() {
 }
 
 void GPIOMockSetInputState(gpio_id pinId, bool value) {
-    // TODO: Precargar valor de entrada
+    inputValues[pinId] = value;
 }
 
 // override
@@ -39,5 +45,5 @@ void GPIOSetOutput(gpio_id pinId, bool value) {
 
 // override
 bool GPIOGetInput(gpio_id pinId) {
-    // TODO: Devolver valor de entrada
+    return inputValues[pinId];
 }

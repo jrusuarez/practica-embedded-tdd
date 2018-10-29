@@ -7,10 +7,10 @@ void TimerMockInit() {
 }
 
 void TimerMockSetTickMsValue(uint32_t value) {
-    // TODO: precargar valor de tick en ms
+    tickValue = value;
 }
 
 // override
 uint32_t GetTickMs() {
-    // TODO: devolver valor de tick en ms
+    return tickValue;
 }
