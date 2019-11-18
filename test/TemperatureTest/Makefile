@@ -33,6 +33,7 @@ TEST_SRC_DIRS =\
 INCLUDE_DIRS =\
   .\
   ../../src\
-  $(CPPUTEST_HOME)/include
+  $(CPPUTEST_HOME)/include\
+	../include
 
 include $(CPPUTEST_HOME)/build/MakefileWorker.mk
