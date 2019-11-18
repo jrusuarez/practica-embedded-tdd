@@ -2,5 +2,5 @@
 #include "HAL/GPIO.h"
 
 void setActuator(bool value) {
-    // TODO: Implementar función de actuador
+    GPIOSetOutput(ACTUATOR_ID, value);
 }
